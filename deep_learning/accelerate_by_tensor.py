@@ -13,7 +13,6 @@ params = [(0,1),(0,2),(3,1)]
 d2l.plot(x,[normals(x, mu, sigma) for mu,sigma in params]
          ,xlabel = 'x' ,ylabel = 'y',figsize=(4.5,2.5),
          legend=[f'mean {mu} ,std{sigma} ' for mu,sigma in params])
-print ("1")
 '''
 
 import matplotlib.pyplot as plt要引入这个库·    
