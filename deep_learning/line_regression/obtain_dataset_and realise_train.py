@@ -68,3 +68,4 @@ for epoch in range(epochs):
         train_l = squared_loss(linearg(feature , w , b) , labels)
         print(w , b)
 
+
