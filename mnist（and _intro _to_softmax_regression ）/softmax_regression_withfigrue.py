@@ -193,6 +193,6 @@ def train(net, train_iter, test_iter, loss, num_epochs, updater):
     assert test_acc <= 1 and test_acc > 0.7, test_acc
 
 
-num_epochs = 10
+num_epochs = 50
 train(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 plt.show()
