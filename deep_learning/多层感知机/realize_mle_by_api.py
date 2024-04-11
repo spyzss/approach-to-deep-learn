@@ -32,10 +32,11 @@ if __name__ == '__main__':
     def init_weights(m):
         if type(m) == nn.Linear:
             nn.init.normal_(m.weight, std=0.01)
-    init_weights(net);
+    init_weights(net)
     #这个就是对参数初始化的操作，不初始化w会满足高斯分布，b会是0
 
+    batch_size, lr, num_epochs = 256, 0.1, 10
     loss = nn.CrossEntropyLoss(reduction='none')
-    num_epochs, lr = 10, 0.1
-    updater = torch.optim.SGD(params, lr=lr)
-    d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, updater)
+    trainer = torch.optim.SGD(net.parameters(), lr=lr)
+    train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
+    d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
